@@ -46,13 +46,6 @@ public class RootLayoutController implements Initializable {
 
 	@FXML
 	private ToggleGroup tglGames = new ToggleGroup();
-
-	@FXML
-	private RadioMenuItem Omaha = new RadioMenuItem();
-
-	@FXML
-	private RadioMenuItem Texas = new RadioMenuItem();
-
 	private int id = 0;
 	public String getRuleName()
 	{	

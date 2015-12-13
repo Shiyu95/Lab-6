@@ -67,6 +67,7 @@ public class RootLayoutController implements Initializable {
 	@FXML
 	private RadioMenuItem twoJoker = new RadioMenuItem();
 
+	private int id = 0;
 	public String getRuleName()
 	{	
 		String strRuleName = null;
@@ -95,6 +96,8 @@ public class RootLayoutController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
+		//ToggleGroup toggle = new ToggleGroup();
+		//setTglGames(toggle);
 		Menu m = new Menu();
 		m.setText("Games");
 
@@ -106,6 +109,7 @@ public class RootLayoutController implements Initializable {
 			String strRuleName = gr.getRULENAME();
 			mi.setToggleGroup(tglGames);
 			mi.setText(strRuleName);
+			id = gr.getRULEID();
 			
 			if (gr.getDEFAULTGAME() == 1)
 			{
@@ -114,7 +118,10 @@ public class RootLayoutController implements Initializable {
 			m.getItems().add(mi);
 		}
 
+	
+		
 		mb.getMenus().add(0,m);
+		mnuGame = m;
 
 		// mb.getMenus().add(m);
 		// mainApp.rootController.getc
@@ -150,7 +157,7 @@ public class RootLayoutController implements Initializable {
 	 * @param mainApp
 	 */
 	public void setMainApp(MainApp mainApp) {
-		Omaha.setToggleGroup(tglGames);
+		/* Omaha.setToggleGroup(tglGames);
 		Texas.setToggleGroup(tglGames);
 		FCD.setToggleGroup(tglGames);
 		Omaha.setOnAction(new EventHandler<ActionEvent>() {
@@ -199,7 +206,7 @@ public class RootLayoutController implements Initializable {
 				PokerTableController.setRle(new Rule(eGame.FiveStudTwoJoker));
 			}
 		});
-
+*/
 		this.mainApp = mainApp;
 	}
 

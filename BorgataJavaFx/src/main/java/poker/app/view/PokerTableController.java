@@ -13,7 +13,6 @@ import org.apache.commons.math3.util.Combinations;
 
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
 
-import base.GameRuleDAL;
 import domain.GameRuleDomainModel;
 import enums.eGame;
 import enums.eRank;
@@ -93,7 +92,7 @@ public class PokerTableController {
 	private ImageView imgTransCardP4 = new ImageView();
 	private ImageView imgTransCardCommon = new ImageView();
 	
-	private static Rule rle;
+	private static Rule rle = new Rule(eGame.FiveStud);
 
 	public static void setRle(Rule rle) {
 		PokerTableController.rle = rle;
@@ -274,7 +273,9 @@ public class PokerTableController {
 		HashMap<String, GameRuleDomainModel> hs = new HashMap();
 		hs = GameRuleBLL.getRuleHashSet();		
 		GameRuleDomainModel gr = hs.get(strRuleName);
-	
+		
+		
+		
 		//tglGame = mainApp.getToggleGroup();
 		
 		eGameState = eGameState.StartOfGame;
@@ -683,6 +684,4 @@ public class PokerTableController {
 
 	}
 	
-	
-
 }

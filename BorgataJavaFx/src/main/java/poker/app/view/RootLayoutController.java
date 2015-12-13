@@ -45,27 +45,13 @@ public class RootLayoutController implements Initializable {
 	private Menu mnuGame;
 
 	@FXML
-	private ToggleGroup tglGames;
+	private ToggleGroup tglGames = new ToggleGroup();
 
 	@FXML
 	private RadioMenuItem Omaha = new RadioMenuItem();
 
 	@FXML
 	private RadioMenuItem Texas = new RadioMenuItem();
-
-	// Five Card Draw
-	@FXML
-	private RadioMenuItem FCD = new RadioMenuItem();
-
-	// Seven Card Draw
-	@FXML
-	private RadioMenuItem SCD = new RadioMenuItem();
-
-	@FXML
-	private RadioMenuItem oneJoker = new RadioMenuItem();
-
-	@FXML
-	private RadioMenuItem twoJoker = new RadioMenuItem();
 
 	private int id = 0;
 	public String getRuleName()
@@ -89,15 +75,13 @@ public class RootLayoutController implements Initializable {
 				}
 			}
 		}
-		
+	
 		return strRuleName;
 	}
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		//ToggleGroup toggle = new ToggleGroup();
-		//setTglGames(toggle);
 		Menu m = new Menu();
 		m.setText("Games");
 
@@ -121,7 +105,7 @@ public class RootLayoutController implements Initializable {
 	
 		
 		mb.getMenus().add(0,m);
-		mnuGame = m;
+
 
 		// mb.getMenus().add(m);
 		// mainApp.rootController.getc
